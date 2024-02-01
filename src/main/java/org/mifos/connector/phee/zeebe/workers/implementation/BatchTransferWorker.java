@@ -119,8 +119,7 @@ public class BatchTransferWorker extends BaseWorker {
             else{
                 String updatedCsvData = updateCsvDataPaymentMode(csvData, filePath);
                 String clientCorrelationId = String.valueOf(UUID.randomUUID());
-                //String batchId = invokeBatchTransactionApi(fileName, updatedCsvData, filePath, clientCorrelationId);
-                String batchId = "!2355667";
+                String batchId = invokeBatchTransactionApi(fileName, updatedCsvData, filePath, clientCorrelationId);
                 if(!ObjectUtils.isEmpty(batchId)){
                     variables.put(INIT_BATCH_TRANSFER_SUCCESS, true);
                     logger.info("Source batchId: {}", variables.get(BATCH_ID));
